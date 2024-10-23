@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         centerTitle: true,
         foregroundColor: Colors.white,
-        title: Text("Tasbiix"),
+        title: const Text("Tasbiix"),
         backgroundColor: Colors.red,
       ),
       body: Center(
@@ -47,11 +47,12 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                 height: 300,
                 width: double.infinity,
                 decoration: BoxDecoration(
@@ -66,11 +67,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       height: 60,
                       child: Center(
                         child: Text('$_counter',
-                            style:
-                                TextStyle(color: Colors.black, fontSize: 20)),
+                            style: const TextStyle(
+                                color: Colors.black, fontSize: 20)),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     Row(
@@ -102,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ))
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     InkWell(
@@ -124,7 +125,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
               ),
-              Spacer()
+              const Spacer()
             ],
           ),
         ),
