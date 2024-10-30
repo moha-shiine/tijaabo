@@ -61,7 +61,21 @@ class _LoginScreenState extends State<LoginScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Container(
-                decoration: BoxDecoration(color: Colors.white),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(5),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey
+                          .withOpacity(0.5), // Shadow color with opacity
+                      spreadRadius: 5, // How much the shadow will spread
+                      blurRadius:
+                          10, // How soft or sharp the shadow will appear
+                      offset: Offset(
+                          0, 3), // Offset of the shadow (horizontal, vertical)
+                    ),
+                  ],
+                ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Column(
@@ -129,7 +143,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             borderRadius: BorderRadius.circular(10)),
                         child: TextButton(
                             onPressed: () {},
-                            child: Text(
+                            child: const Text(
                               "Login",
                               style:
                                   TextStyle(fontSize: 20, color: Colors.white),
