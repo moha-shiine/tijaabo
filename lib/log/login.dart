@@ -71,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Center(
                         child: Text(
                           "SING IN",
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontSize: 20, fontWeight: FontWeight.w500),
                         ),
                       ),
@@ -135,12 +135,13 @@ class _LoginScreenState extends State<LoginScreen> {
                                   TextStyle(fontSize: 20, color: Colors.white),
                             )),
                       ),
-                      Gap(30),
+                      Gap(13),
                       TextButton.icon(
                         onPressed: () {},
                         label: Text("Forget Passowrd ?"),
                         icon: Icon(IconlyLight.lock),
-                      )
+                      ),
+                      Gap(13),
                     ],
                   ),
                 ),
