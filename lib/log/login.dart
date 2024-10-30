@@ -53,7 +53,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   fontSize: 25,
                   color: Colors.blue,
                   fontWeight: FontWeight.w700,
-                  fontStyle: FontStyle.italic,
+                  fontStyle: FontStyle.normal,
                 ),
               ),
             ),
@@ -66,13 +66,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   borderRadius: BorderRadius.circular(5),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey
-                          .withOpacity(0.5), // Shadow color with opacity
-                      spreadRadius: 5, // How much the shadow will spread
-                      blurRadius:
-                          10, // How soft or sharp the shadow will appear
-                      offset: Offset(
-                          0, 3), // Offset of the shadow (horizontal, vertical)
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 5,
+                      blurRadius: 10,
+                      offset: Offset(0, 3),
                     ),
                   ],
                 ),
