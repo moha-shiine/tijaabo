@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:gap/gap.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -37,17 +38,21 @@ class _LoginScreenState extends State<LoginScreen> {
               TextSpan(
                 children: [
                   TextSpan(
-                      text: "Portal",
-                      style: TextStyle(
-                          color: Colors.green,
-                          fontSize: 25,
-                          fontWeight: FontWeight.w600))
+                    text: "Portal",
+                    style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: GoogleFonts.merienda().fontFamily,
+                        fontStyle: FontStyle.italic,
+                        color: Colors.green),
+                  )
                 ],
-                text: "Student  ",
-                style: TextStyle(
-                  color: Colors.blue,
+                text: "Student ",
+                style: GoogleFonts.merienda(
+                  textStyle: Theme.of(context).textTheme.displayLarge,
                   fontSize: 25,
-                  fontWeight: FontWeight.w600,
+                  color: Colors.blue,
+                  fontWeight: FontWeight.w700,
                   fontStyle: FontStyle.italic,
                 ),
               ),
