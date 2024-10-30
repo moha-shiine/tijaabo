@@ -57,10 +57,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
             ),
-            Text(
-              "Siu Portal",
-              style: TextStyle(fontSize: 20),
-            ),
+            Gap(26),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Container(
@@ -68,11 +65,15 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Gap(20),
-                      Text(
-                        "SING IN",
-                        style: TextStyle(fontSize: 20),
+                      Center(
+                        child: Text(
+                          "SING IN",
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.w500),
+                        ),
                       ),
                       Gap(20),
                       TextFormField(
