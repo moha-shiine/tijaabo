@@ -3,6 +3,8 @@ import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../main.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -165,6 +167,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: TextButton(
                               onPressed: () {
                                 if (_fromgolbol.currentState!.validate()) {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (_) => MainPage()));
                                   print('Form is valid, proceed with login');
                                 }
                               },
