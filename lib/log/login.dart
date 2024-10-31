@@ -79,10 +79,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Gap(20),
-                      Center(
+                      const Center(
                         child: Text(
                           "SING IN",
-                          style: const TextStyle(
+                          style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.w500),
                         ),
                       ),
@@ -92,20 +92,21 @@ class _LoginScreenState extends State<LoginScreen> {
                         decoration: InputDecoration(
                             hintText: "Student ID",
                             focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(color: Colors.black),
+                                borderSide: BorderSide(
+                                    color: Colors.grey.shade300, width: 0.6),
                                 borderRadius: BorderRadius.circular(8)),
-                            fillColor: Colors.blue.withOpacity(0.1),
+                            // fillColor: Colors.blue.withOpacity(0.1),
 
                             /// filled: true,
                             enabled: true,
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
-                              borderSide: BorderSide(color: Colors.black),
+                              borderSide:
+                                  BorderSide(color: Colors.grey, width: 0.6),
                             ),
                             border: OutlineInputBorder(
                                 borderSide: BorderSide(
-                                  color: Colors.black,
-                                ),
+                                    color: Colors.blueGrey, width: 0.6),
                                 borderRadius: BorderRadius.circular(4))),
                       ),
                       Gap(10),
@@ -116,7 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             hintText: "password",
                             focusedBorder: OutlineInputBorder(
                                 borderSide:
-                                    BorderSide(color: Colors.black, width: 1),
+                                    BorderSide(color: Colors.grey, width: 0.6),
                                 borderRadius: BorderRadius.circular(8)),
                             fillColor: Colors.blue.withOpacity(0.1),
                             // filled: true,
@@ -124,11 +125,11 @@ class _LoginScreenState extends State<LoginScreen> {
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8),
                               borderSide:
-                                  BorderSide(color: Colors.black, width: 1),
+                                  BorderSide(color: Colors.grey, width: 0.6),
                             ),
                             border: OutlineInputBorder(
                                 borderSide:
-                                    BorderSide(color: Colors.black, width: 1),
+                                    BorderSide(color: Colors.grey, width: 0.6),
                                 borderRadius: BorderRadius.circular(4))),
                       ),
                       Gap(30),
@@ -146,11 +147,18 @@ class _LoginScreenState extends State<LoginScreen> {
                                   TextStyle(fontSize: 20, color: Colors.white),
                             )),
                       ),
-                      Gap(13),
+                      Gap(8),
                       TextButton.icon(
                         onPressed: () {},
-                        label: Text("Forget Passowrd ?"),
-                        icon: Icon(IconlyLight.lock),
+                        label: Text(
+                          "Forget Passowrd ?",
+                          style: TextStyle(color: Colors.grey, fontSize: 17),
+                        ),
+                        icon: Icon(
+                          IconlyLight.lock,
+                          color: Colors.grey,
+                          size: 30,
+                        ),
                       ),
                       Gap(13),
                     ],
