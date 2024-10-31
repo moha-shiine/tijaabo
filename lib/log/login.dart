@@ -116,6 +116,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 borderSide:
                                     BorderSide(color: Colors.grey, width: 0.6),
                               ),
+                              hintStyle: TextStyle(color: Colors.grey),
                               border: OutlineInputBorder(
                                   borderSide: BorderSide(
                                       color: Colors.blueGrey, width: 0.6),
@@ -135,6 +136,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           obscureText: true,
                           keyboardType: TextInputType.numberWithOptions(),
                           decoration: InputDecoration(
+                              hintStyle: TextStyle(color: Colors.grey),
                               hintText: "password",
                               focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
