@@ -34,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
               Gap(100),
               Image.asset(
                 "assets/logo.jpeg",
-                scale: 1.4,
+                scale: 1.8,
               ),
               Gap(10),
               Text.rich(
@@ -43,17 +43,17 @@ class _LoginScreenState extends State<LoginScreen> {
                     TextSpan(
                       text: "Portal",
                       style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 20,
                           fontWeight: FontWeight.w700,
                           fontFamily: GoogleFonts.merienda().fontFamily,
-                          fontStyle: FontStyle.italic,
+                          fontStyle: FontStyle.normal,
                           color: Colors.green),
                     )
                   ],
                   text: "Student ",
                   style: GoogleFonts.merienda(
                     textStyle: Theme.of(context).textTheme.displayLarge,
-                    fontSize: 25,
+                    fontSize: 20,
                     color: Colors.blue,
                     fontWeight: FontWeight.w700,
                     fontStyle: FontStyle.normal,
