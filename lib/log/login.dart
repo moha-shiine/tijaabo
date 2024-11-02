@@ -136,7 +136,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             return null;
                           },
                           obscureText: true,
-                          keyboardType: TextInputType.numberWithOptions(),
+                          keyboardType: TextInputType.text,
                           decoration: InputDecoration(
                               hintStyle: TextStyle(color: Colors.grey),
                               hintText: "password",
@@ -167,8 +167,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: TextButton(
                               onPressed: () {
                                 if (_fromgolbol.currentState!.validate()) {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (_) => MainPage()));
+                                  // Navigator.of(context).push(MaterialPageRoute(
+                                  //  builder: (_) => MainPage()));
                                   print('Form is valid, proceed with login');
                                 }
                               },
