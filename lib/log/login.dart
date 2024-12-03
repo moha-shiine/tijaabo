@@ -183,27 +183,32 @@ class _LoginScreenState extends State<LoginScreen> {
                                   borderRadius: BorderRadius.circular(4))),
                         ),
                         Gap(30),
-                        Container(
-                          width: double.infinity,
-                          height: 50,
-                          decoration: BoxDecoration(
-                              color: Colors.blue,
-                              borderRadius: BorderRadius.circular(10)),
-                          child: TextButton(
-                              onPressed: () {
-                                if (_fromgolbol.currentState!.validate()) {
-                                  _register();
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (_) => MainPage()));
-                                  print('Form is valid, proceed with login');
-                                }
-                              },
-                              child: const Text(
-                                "Login",
-                                style: TextStyle(
-                                    fontSize: 20, color: Colors.white),
-                              )),
-                        ),
+                        _isLoading
+                            ? CircularProgressIndicator()
+                            : Container(
+                                width: double.infinity,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                    color: Colors.blue,
+                                    borderRadius: BorderRadius.circular(10)),
+                                child: TextButton(
+                                    onPressed: () {
+                                      if (_fromgolbol.currentState!
+                                          .validate()) {
+                                        _register();
+                                        Navigator.of(context).push(
+                                            MaterialPageRoute(
+                                                builder: (_) => MainPage()));
+                                        print(
+                                            'Form is valid, proceed with login');
+                                      }
+                                    },
+                                    child: const Text(
+                                      "Login",
+                                      style: TextStyle(
+                                          fontSize: 20, color: Colors.white),
+                                    )),
+                              ),
                         Gap(8),
                         TextButton.icon(
                           onPressed: () {},
@@ -217,6 +222,18 @@ class _LoginScreenState extends State<LoginScreen> {
                             size: 30,
                           ),
                         ),
+                        if (_message != null)
+                          Padding(
+                            padding: const EdgeInsets.only(top: 20),
+                            child: Text(
+                              _message!,
+                              style: TextStyle(
+                                color: _message!.contains("success")
+                                    ? Colors.green
+                                    : Colors.red,
+                              ),
+                            ),
+                          ),
                         Gap(13),
                       ],
                     ),
