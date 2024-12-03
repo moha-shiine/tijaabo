@@ -196,6 +196,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       if (_fromgolbol.currentState!
                                           .validate()) {
                                         _register();
+                                        print(_register);
                                         Navigator.of(context).push(
                                             MaterialPageRoute(
                                                 builder: (_) => MainPage()));

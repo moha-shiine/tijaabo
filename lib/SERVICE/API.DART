@@ -15,10 +15,13 @@ class AuthService {
           'password': password,
         },
       );
-
       if (response.statusCode == 200) {
+        
         return json.decode(response.body);
+        
+        
       } else {
+        
         return {'error': 'Server error: ${response.statusCode}'};
       }
     } catch (e) {
