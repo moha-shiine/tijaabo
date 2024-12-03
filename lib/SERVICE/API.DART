@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class AuthService {
-  final String _baseUrl = "http://192.168.100.255:81/login/log.php";
+  final String _baseUrl = "http://192.168.100.255/login/log.php";
 
   // User registration
   Future<Map<String, dynamic>> registerUser(String username, String password) async {
