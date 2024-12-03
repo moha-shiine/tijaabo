@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tijaabo/SERVICE/API.DART';
 
 import '../main.dart';
 
@@ -13,6 +14,28 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final AuthService _authService = AuthService();
+  final TextEditingController _usernameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  bool _isLoading = false;
+  String? _message;
+
+  void _register() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    final result = await _authService.registerUser(
+      _usernameController.text.trim(),
+      _passwordController.text.trim(),
+    );
+
+    setState(() {
+      _isLoading = false;
+      _message = result['success'] ?? result['error'];
+    });
+  }
+
   final _fromgolbol = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -93,6 +116,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         Gap(20),
                         TextFormField(
+                          controller: _usernameController,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Please enter your ID';
@@ -102,9 +126,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             }
                             return null;
                           },
-                          keyboardType: TextInputType.number,
+                          keyboardType: TextInputType.text,
                           decoration: InputDecoration(
-                              hintText: "Student ID",
+                              hintText: "User Name",
                               focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                       color: Colors.grey.shade300, width: 0.6),
@@ -126,6 +150,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         Gap(10),
                         TextFormField(
+                          controller: _passwordController,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
                               return 'Please enter your password';
@@ -167,8 +192,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: TextButton(
                               onPressed: () {
                                 if (_fromgolbol.currentState!.validate()) {
-                                  // Navigator.of(context).push(MaterialPageRoute(
-                                  //  builder: (_) => MainPage()));
+                                  _register();
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (_) => MainPage()));
                                   print('Form is valid, proceed with login');
                                 }
                               },
